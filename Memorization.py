@@ -1,8 +1,9 @@
 # モジュールのインポート
 import tkinter as tk
+import tkinter.messagebox as tkmsg
 import random
 
-
+# メイン画面表示
 root = tk.Tk()
 root.title("top")
 root.geometry("600x600")
@@ -17,36 +18,44 @@ with open(path1, encoding="utf-8") as f:
     l_strip1 = [s.strip() for s in f.readlines()]
 
 
-
-def start(event):
+# 問題仮面
+def problem(event):
     global r
     global txt
-    start1 = tk.Tk()
-    start1.title("start")
-    start1.geometry("600x600")
+
+    # 問題画面表示
+    problem1 = tk.Tk()
+    problem1.title("problem")
+    problem1.geometry("600x600")
+
+
     l = len(l_strip)
     r = random.randint(0,l-1)
     print(r)
-    lbl = tk.Label(start1, text=l_strip[r])
+    lbl = tk.Label(problem1, text=l_strip[r])
     lbl.place(x=300, y=300)
-    txt = tk.Entry(start1,width=20)
+    txt = tk.Entry(problem1,width=20)
     txt.place(x=250, y=100)
-    Button1= tk.Button(start1,text='回答',font=("",30))
+
+    # 回答ボタン表示
+    Button1= tk.Button(problem1,text='回答',font=("",30))
     Button1.place(x=250,y=200)
     Button1.bind("<Button-1>",Answer)
 
-
+# 正解不正解判定
 def Answer(event):
     global txt
     global r
     tmp = txt.get()
     if tmp == l_strip1[r]:
-        print("正解")
+        tkmsg.showinfo(title="正解", message="正解")
     else:
-        print("不正解答えは"+l_strip1[r])
+        tkmsg.showinfo(title="不正解", message="不正解答えは"+l_strip1[r])
 
-# ボタン
+
+
+# 開始ボタン表示
 Button = tk.Button(text='暗記開始',font=("",30))
 Button.place(x=250,y=150)
-Button.bind("<Button-1>",start)
+Button.bind("<Button-1>",problem)
 root.mainloop()
