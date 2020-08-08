@@ -18,7 +18,7 @@ with open(path1, encoding="utf-8") as f:
     l_strip1 = [s.strip() for s in f.readlines()]
 
 
-# 問題仮面
+# 問題画面
 def problem(event):
     global r
     global txt
