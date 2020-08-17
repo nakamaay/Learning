@@ -51,7 +51,7 @@ def problem(event):
     # 問題フォルダの設定ファイル読み込み
     with open(Folder_name+"/config.txt") as f:
         l = [s.strip() for s in f.readlines()]
-        for i in range:
+        for i in range(3):
             print(l[i])
             i *= 5
 
