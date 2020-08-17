@@ -32,7 +32,6 @@ def  Learning_set_Read(event):
 
 # 問題画面
 def problem(event):
-    global r
 
 
     # 問題画面表示
@@ -48,10 +47,14 @@ def problem(event):
     basename = os.path.basename(zipfilepath)
     Folder_name = basename.replace('.zip', '')
 
-    # 問題フォルダの設定ファイル読み込み
-    with open(Folder_name+"/config.txt") as f:
-        l = [s.strip() for s in f.readlines()]
-        print(l)
+
+    files = os.listdir(Folder_name)  
+    count = len(files)
+    print(count)  
+    r = random.randint(1)
+
+    print(r)
+
 
 
 
