@@ -51,7 +51,9 @@ def problem(event):
     # 問題フォルダの設定ファイル読み込み
     with open(Folder_name+"/config.txt") as f:
         l = [s.strip() for s in f.readlines()]
-        print(l)
+        for i in range:
+            print(l[i])
+            i *= 5
 
 
 
@@ -129,7 +131,7 @@ def Answer(event):
 # トップ画面のボタン
 
 # 開始
-Button = tk.Button(text='暗記開始',font=("",30))
+Button = tk.Button(text='学習開始',font=("",30))
 Button.place(x=200,y=150)
 Button.bind("<Button-1>",problem)
 
