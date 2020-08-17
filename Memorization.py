@@ -44,11 +44,11 @@ def problem(event):
     with zipfile.ZipFile(zipfilepath) as zf:
         zf.extractall()
 
-    
+    # ファイルパスからフォルダ名取得
     basename = os.path.basename(zipfilepath)
     Folder_name = basename.replace('.zip', '')
 
-
+    # 問題フォルダの設定ファイル読み込み
     with open(Folder_name+"/config.txt") as f:
         l = [s.strip() for s in f.readlines()]
         print(l)
@@ -56,16 +56,11 @@ def problem(event):
 
 
 
+
+
     problem1 = tk.Tk()
     problem1.title("problem")
     problem1.geometry("600x600")
-
-
-    l = len(l_strip)
-    r = random.randint(0,l-1)
-    print(r)
-    lbl = tk.Label(problem1, text=l_strip[r], font=("",20))
-    lbl.place(x=300, y=50)
 
 
 
