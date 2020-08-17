@@ -49,15 +49,9 @@ def problem(event):
 
 
     files = os.listdir(Folder_name)  
-    count = len(files)
-    print(count)  
-    r = random.randint(1)
-
-    print(r)
-
-
-
-
+    count = len(files)/4
+    print(count)
+    r = random.randint(1, count)
 
 
 
@@ -66,6 +60,28 @@ def problem(event):
     problem1.geometry("600x600")
 
 
+    with open(Folder_name+"/"+str(r)+"-1.txt") as f:
+        lbl =  tk.Label(problem1, text=f.read(), font =("",20))
+        lbl.place(x=200,y=50)
+ 
+
+
+        with open(Folder_name+"/"+str(r)+"-2.txt") as f:
+            l_strip = [s.strip() for s in f.readlines()]
+            print(l_strip)
+
+
+            One_choice_button = tk.Button(problem1, text=l_strip[0], font=("",20))
+            One_choice_button.place(x=50,y=100)
+            # One_choice_button.bind("<Button-1>",)
+
+            Two_choices_button = tk.Button(problem1, text=l_strip[1], font=("",20))
+            Two_choices_button.place(x=100,y=100)
+
+            Three_choices_button = tk.Button(problem1, text=l_strip[2], font=("",20))
+            Three_choices_button.place(x=150,y=100)
+
+# Learning_set_Read_Button.bind("<Button-1>",Learning_set_Read)
 
 
 """
