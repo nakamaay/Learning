@@ -101,17 +101,17 @@ def problem(event):
         b=f.read()
 
     One_choice_button = tk.Button(problem1, text=l_strip[0], font=("",20))
-    One_choice_button.place(x=50,y=150)
+    One_choice_button.place(x=200,y=150)
     One_choice_button.bind("<Button-1>", One_choice)
 
 
     Two_choices_button = tk.Button(problem1, text=l_strip[1], font=("",20))
-    Two_choices_button.place(x=100,y=150)
+    Two_choices_button.place(x=250,y=150)
     Two_choices_button.bind("<Button-1>", Two_choices)
 
 
     Three_choices_button = tk.Button(problem1, text=l_strip[2], font=("",20))
-    Three_choices_button.place(x=150,y=150)
+    Three_choices_button.place(x=300,y=150)
     Three_choices_button.bind("<Button-1>", Three_choices)
 
 
@@ -139,7 +139,7 @@ def problem(event):
 
 # トップ画面のボタン
 # 開始
-Button = tk.Button(text='暗記開始',font=("",30))
+Button = tk.Button(text='学習開始',font=("",30))
 Button.place(x=200,y=150)
 Button.bind("<Button-1>",problem)
 
