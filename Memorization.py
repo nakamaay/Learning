@@ -66,40 +66,42 @@ def problem(event):
     basename = os.path.basename(zipfilepath)
     Folder_name = basename.replace('.zip', '')
 
-
+    # 学習フォルダのファイル数
     files = os.listdir(Folder_name)
+    # ファイル数割る4
     count = len(files)/4
     r = random.randint(1, count)
 
 
-
+    # 学習画面表示
     problem1 = tk.Tk()
     problem1.title("problem")
     problem1.geometry("600x600")
 
-
+    # 問題文ファイル読み込み
     with open(Folder_name+"/"+str(r)+"-1.txt") as f:
+        # ラベルに表示
         lbl =  tk.Label(problem1, text=f.read(), font =("",20))
         lbl.place(x=200,y=50)
 
 
-
+    # 問題選択肢ファイル読み込み
     with open(Folder_name+"/"+str(r)+"-2.txt") as f:
         l_strip = [s.strip() for s in f.readlines()]
-        print(l_strip)
 
 
 
-
+    # 説明文ファイル読み込み
     with open(Folder_name+"/"+str(r)+"-3.txt") as f:
+        # ラベルに表示
         lbl =  tk.Label(problem1, text=f.read(), font =("",20))
         lbl.place(x=200,y=100)
 
-
+    # 答えファイル読み込み
     with open(Folder_name+"/"+str(r)+"-4.txt") as f:
         global b
         b=f.read()
-
+    # 問題選択肢をボタンに表示
     One_choice_button = tk.Button(problem1, text=l_strip[0], font=("",20))
     One_choice_button.place(x=200,y=150)
     One_choice_button.bind("<Button-1>", One_choice)
@@ -116,7 +118,7 @@ def problem(event):
 
 
 
-
+    # 正解不正解判定
     def Answer(event):
         if (a == int(b)):
             res = messagebox.showinfo("正解", "正解")
@@ -138,12 +140,13 @@ def problem(event):
 
 
 # トップ画面のボタン
-# 開始
+
+# 学習開始ボタン
 Button = tk.Button(text='学習開始',font=("",30))
 Button.place(x=200,y=150)
 Button.bind("<Button-1>",problem)
 
-# 学習セットの読み込み
+# 学習セットの読み込みボタン
 Learning_set_Read_Button = tk.Button(text='学習セット読み込み',font=("",30))
 Learning_set_Read_Button.place(x=200,y=250)
 Learning_set_Read_Button.bind("<Button-1>",Learning_set_Read)
