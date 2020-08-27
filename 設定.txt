@@ -1,1 +1,1 @@
-/mnt/c/github/Memorization/test.zip
+/home/naka/github/Learning/test.zip

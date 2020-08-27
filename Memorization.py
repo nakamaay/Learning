@@ -123,14 +123,14 @@ def problem(event):
         if (a == int(b)):
             res = messagebox.showinfo("正解", "正解")
             if res == "ok":
-                button = tk.Button(problem1, text='次の問題へ', font=("",20))
+                button = tk.Button(problem1, text='次の問題へ',command=problem1.destroy , font=("",20))
                 button.place(x=200,y=400)
                 button.bind("<Button-1>",problem)
 
         else:
             res = messagebox.showinfo("不正解", "不正解:"+l_strip[int(b)-1])
             if res == "ok":
-                button = tk.Button(problem1, text='次の問題へ', font=("",20))
+                button = tk.Button(problem1, text='次の問題へ',command=problem1.destroy , font=("",20))
                 button.place(x=200,y=400)
                 button.bind("<Button-1>",problem)
 

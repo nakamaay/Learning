@@ -1,5 +1,8 @@
-import os
+import tkinter as tk
+a=tk.Tk()
+root = tk.Tk()
+button=tk.Button(a, text='aaaa', command=root.destroy)
+button.pack()
 
-path = "/mnt/c/Users/nakah/OneDrive/デスクトップ/test.zip"
-basename = os.path.basename(path)
-print(basename.replace('.zip', ''))
+
+root.mainloop()
