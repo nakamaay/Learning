@@ -1,8 +1,5 @@
-import tkinter as tk
-a=tk.Tk()
-root = tk.Tk()
-button=tk.Button(a, text='aaaa', command=root.destroy)
-button.pack()
+import csv
 
-
-root.mainloop()
+path = open("test.csv")
+a = path.row[1]
+print(a)
