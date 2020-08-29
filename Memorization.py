@@ -12,8 +12,10 @@ b = 0
 # メイン画面表示
 root = tk.Tk()
 root.title("top")
-root.minsize(width=600, height=600)
-root.maxsize(width=600, height=600)
+root.geometry('600x600')
+root.configure(bg='blue')
+
+
 
 
 
@@ -53,10 +55,10 @@ def Three_choices(event):
 def problem(event):
 
 
+
     # 問題画面表示
     with open("設定.txt") as f:
         zipfilepath = f.read()
-
 
     # ファイルを解凍する
     with zipfile.ZipFile(zipfilepath) as zf:
@@ -77,6 +79,7 @@ def problem(event):
     problem1 = tk.Tk()
     problem1.title("problem")
     problem1.geometry("600x600")
+    problem1.lower()
 
     # 問題文ファイル読み込み
     with open(Folder_name+"/"+str(r)+"-1.txt") as f:
