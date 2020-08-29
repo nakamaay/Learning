@@ -1,1 +1,1 @@
-/home/naka/github/Learning/test.zip
+/mnt/c/github/Learning/test.zip
