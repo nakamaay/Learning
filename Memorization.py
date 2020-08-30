@@ -6,14 +6,16 @@ from tkinter import filedialog
 import random
 import os
 import zipfile
+
 a = 0
 b = 0
 
 # メイン画面表示
 root = tk.Tk()
 root.title("top")
-root.minsize(width=600, height=600)
-root.maxsize(width=600, height=600)
+root.geometry("600x600")
+
+
 
 
 
@@ -51,6 +53,8 @@ def Three_choices(event):
 
 # 問題画面
 def problem(event):
+    global a
+    a = 0
 
 
     # 問題画面表示
