@@ -1,5 +1,4 @@
-import os
+import pandas as pd
 
-path = "/mnt/c/Users/nakah/OneDrive/デスクトップ/test.zip"
-basename = os.path.basename(path)
-print(basename.replace('.zip', ''))
+df_none_usecols = pd.read_csv('test.csv', encoding = 'utf-8', header=None, usecols=[2])
+print(df_none_usecols)
