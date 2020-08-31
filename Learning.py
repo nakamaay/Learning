@@ -14,7 +14,7 @@ b = 0
 root = tk.Tk()
 root.title("top")
 root.geometry('600x600')
-root.configure(bg='blue')
+root.configure(bg='Green')
 
 
 
@@ -83,6 +83,7 @@ def problem(event):
     problem1.title("problem")
     problem1.geometry("600x600")
     problem1.lower()
+    problem1.configure(bg='Green')
 
     # 問題文ファイル読み込み
     with open(Folder_name+"/"+str(r)+"-1.txt") as f:
