@@ -6,6 +6,7 @@ from tkinter import filedialog
 import random
 import os
 import zipfile
+
 a = 0
 b = 0
 
@@ -53,6 +54,8 @@ def Three_choices(event):
 
 # 問題画面
 def problem(event):
+    global a
+    a = 0
 
 
 
